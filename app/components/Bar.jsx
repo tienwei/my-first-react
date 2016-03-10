@@ -3,9 +3,8 @@ const {Component} = React;
 
 const divStyle = {
   border: '1px solid black',
-  height: '60px'
+  height: '50px'
 };
-
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +43,7 @@ class App extends Component {
         </div>
         <button onClick={this.fillBar.bind(this)}>+</button>
         <button onClick={this.unfillBar.bind(this)}>-</button>
+        <p>{`Progress: ${this.state.filled}%`}</p>
       </div>
     );
   }

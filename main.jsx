@@ -2,6 +2,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/components/App';
+import Bars from './app/components/Bars';
 
-ReactDOM.render( <App title="React Progress Bar" />, document.getElementById('app'));
+ReactDOM.render( <Bars title="React Progress Bar" />, document.getElementById('app'));
