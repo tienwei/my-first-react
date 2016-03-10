@@ -1,12 +1,15 @@
+var path = require('path');
+
 module.exports = {
+  content: '',
   entry: [
     'webpack/hot/dev-server',
     './main.jsx'
   ],
   output: {
-    path: __dirname + '/public',
+    path: path.resolve('build/js/'),
+    publicPath: '/public/assets/js/',
     filename: 'bundle.js',
-    publicPath: 'http://localhost:8080/public'
   },
   module: {
     loaders: [
@@ -16,6 +19,9 @@ module.exports = {
         loader: 'babel',
       }
     ]
+  },
+  devServer: {
+      contentBase: 'public',
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
