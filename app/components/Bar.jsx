@@ -41,8 +41,6 @@ class App extends Component {
         <div style={divStyle}>
           <span style={spanStyle}></span>
         </div>
-        <button onClick={this.fillBar.bind(this)}>+</button>
-        <button onClick={this.unfillBar.bind(this)}>-</button>
         <p>{`Progress: ${this.state.filled}%`}</p>
       </div>
     );
