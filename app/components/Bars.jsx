@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Bar from './Bar';
 
 const {Component} = React;
@@ -6,7 +6,7 @@ const {Component} = React;
 class Bars extends Component {
   constructor(props) {
     super(props);
-    this.state = {theBar: '', theStep: 5};
+    this.state = {theBar: '', theStep: 10};
     this.fillBar = this.fillBar.bind(this);
     this.unfillBar = this.unfillBar.bind(this);
     this.selectBar = this.selectBar.bind(this);
@@ -40,12 +40,14 @@ class Bars extends Component {
   }
 
   render() {
+
     return (
       <div>
         <h1>{this.props.title}</h1>
-        <Bar title="Bar One" ref="bar1"></Bar>
-        <Bar title="Bar Two" ref="bar2"></Bar>
-        <Bar title="Bar Three" ref="bar3"></Bar>
+
+        {this.props.initalBars.map((bar) => {
+          return <Bar title={bar.title} className={bar.className} key={bar.key} ref={'bar' + bar.key} ></Bar>
+        })}
 
         <strong>Controller:</strong>&nbsp;
         <select onChange={this.selectBar}>

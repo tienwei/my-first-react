@@ -1,0 +1,5 @@
+[ignore]
+.*/react/node_modules/.*
+
+[options]
+module.system=haste

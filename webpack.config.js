@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   content: '',
@@ -11,6 +12,13 @@ module.exports = {
     publicPath: '/public/assets/js/',
     filename: 'bundle.js',
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+        React: 'react',
+        ReactDOM: 'react-dom',
+        path: 'path'
+    })
+  ],
   module: {
     loaders: [
       {
@@ -18,7 +26,7 @@ module.exports = {
         exclude: '/node_modules/',
         loader: 'babel',
       }
-    ]
+    ],
   },
   devServer: {
       contentBase: 'public',
