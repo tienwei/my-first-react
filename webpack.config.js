@@ -30,6 +30,7 @@ module.exports = {
   },
   devServer: {
       contentBase: 'public',
+      port: 8999
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

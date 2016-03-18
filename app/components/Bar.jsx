@@ -21,11 +21,9 @@ class App extends Component {
   }
 
   render() {
-    let bgColour = (this.state.filled > 100) ? 'red' : 'blue';
-    let fillArea = (this.state.filled > 100) ? 100 : this.state.filled;
     let spanStyle = {
-      width :`${fillArea}%`,
-      background : `${bgColour}`,
+      width :`${Math.min(this.props.progress, 100)}%`,
+      background : `${this.props.bgColor}`,
       height : '100%',
       display : 'inline-block'
     };
@@ -35,7 +33,7 @@ class App extends Component {
         <h2>{this.props.title}</h2>
         <div style={divStyle}>
           <span style={spanStyle}></span>
-          <span style={midSpanStyle}>{`Progress : ${this.state.filled}%`}</span>
+          <span style={midSpanStyle}>{`Progress : ${this.props.progress}%`}</span>
         </div>
 
       </div>
