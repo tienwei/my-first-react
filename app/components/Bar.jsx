@@ -14,12 +14,6 @@ const midSpanStyle = {
 };
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    // this.fillBar = () => this.fillBar(); For some reason, this will invoke max stack calls
-    this.state = {filled : this.props.initPercent};
-  }
-
   render() {
     let spanStyle = {
       width :`${Math.min(this.props.progress, 100)}%`,
@@ -40,10 +34,5 @@ class App extends Component {
     );
   }
 }
-
-
-
-App.propTypes = { initPercent : React.PropTypes.number };
-App.defaultProps = { initPercent : 0 };
 
 export default App;

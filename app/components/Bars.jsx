@@ -25,7 +25,7 @@ class Bars extends Component {
   unfillBar() {
     let theStep = parseInt(this.state.theStep);
     let newProgresses = this.state.progresses.map((p, i) => {
-      return (parseInt(this.state.theBar) === i) ? p - theStep : p;
+      return (parseInt(this.state.theBar) === i) ? ((p - theStep) > 0 ? p - theStep : 0) : p;
     });
 
     this.setState({progresses: newProgresses});
